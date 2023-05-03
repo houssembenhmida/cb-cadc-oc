@@ -1,0 +1,7 @@
+helm repo add cloudbees https://public-charts.artifacts.cloudbees.com/repository/public/
+helm repo update
+kubectl create namespace cloudbees-core
+kubectl config set-context $(kubectl config current-context) --namespace=cloudbees
+kubectl create configmap oc-casc-bundle --from-file=bundle.yaml --from-file=jenkins.yaml --from-file=plugins.yaml -n cloudbees
+helm install cloudbees-core cloudbees/cloudbees-core --namespace cloudbees --values values.yaml
+helm upgrade cloudbees-core cloudbees/cloudbees-core --namespace cloudbees --values values.yaml

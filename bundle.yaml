@@ -1,0 +1,9 @@
+id: "bundle-1"
+version: "1"
+apiVersion: "1"
+description: "My CloudBees Configuration as Code (CasC) bundle"
+jcasc:
+  - "jenkins.yaml"
+jcascMergeStrategy: "errorOnConflict"
+plugins:
+  - "plugins.yaml"

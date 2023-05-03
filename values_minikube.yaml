@@ -1,0 +1,12 @@
+Subdomain: true
+OperationsCenter:
+  CasC:
+    Enabled: true
+    ConfigMapName: oc-casc-bundle
+  HostName: cbsmartek.net
+  Protocol: https 
+  Platform: eks
+  Ingress:
+    Class: alb
+    Annotations:
+      alb.ingress.kubernetes.io/scheme: internet-facing 
